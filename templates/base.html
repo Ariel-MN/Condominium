@@ -1,0 +1,77 @@
+{% load static %}
+
+<!doctype html>
+<html lang="it">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="description" content="Residenza La Rosa. Via pippo, 10 - 20121 Milano MI." />
+
+    <link rel="shortcut icon" href="{% static 'img/favicon.ico' %}" />
+
+    <!-- FontAwesome JS -->
+    <script defer src="{% static 'fontawesome/js/all.js' %}"></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap/css/bootstrap.min.css' %}" />
+
+    <!-- Theme CSS -->
+    <link rel="stylesheet" href="{% static 'css/theme.css' %}" />
+
+    {% block extracss %}
+    {% endblock extracss %}
+    
+    <title>{% block title %}{% endblock title %} | La Rosa</title>
+
+  </head>
+  <body>
+    <header class="row align-items-center">
+        <ul class="list-inline my-3">
+            <li class="nav-item">
+            {% block home %}
+                <a class="nav-link" href="/"><i class="fas fa-building fa-fw mr-2"></i>Home</a>
+            {% endblock home %}
+            </li>
+            <li class="nav-item">
+            {% block news %}
+                <a class="nav-link" href="/news"><i class="fas fa-newspaper fa-fw mr-2"></i>News</a>
+            {% endblock news %}
+            </li>
+            <li class="nav-item">
+            {% block regolamento %}
+                <a class="nav-link" href="/regolamento"><i class="fas fa-gavel fa-fw mr-2"></i>Regolamento</a>
+            {% endblock regolamento %}
+            </li>
+            <li class="nav-item">
+            {% block documenti-ufficiali %}
+                <a class="nav-link" href="/documenti"><i class="fas fa-file-alt fa-fw mr-2"></i>Documenti ufficiali</a>
+            {% endblock documenti-ufficiali %}
+            </li>
+            <li class="nav-item">
+            {% block amministrazione %}
+                <a class="nav-link disabled" href="/amministrazione"><i class="fas fa-user-tie fa-fw mr-2"></i>Amministrazione</a>
+            {% endblock amministrazione %}
+            </li>
+            <li class="nav-item">
+            {% block avvisi %}
+                <a class="nav-link disabled" href="/avvisi"><i class="fas fa-bell fa-fw mr-2"></i>Avvisi</a>
+            {% endblock avvisi %}
+            </li>
+            <li class="nav-item">
+            {% block domande %}
+                <a class="nav-link" href="/domande"><i class="fas fa-comments fa-fw mr-2"></i>Domande</a>
+            {% endblock domande %}
+            </li>
+        </ul>
+    </header>
+
+    {% block content %}
+    {% endblock content %}
+
+    {% block extrajs %}
+    {% endblock extrajs %}
+
+  </body>
+</html>

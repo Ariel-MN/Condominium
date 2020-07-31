@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Home{% endblock title %}
+
+{% block home %}
+    <a class="nav-link selected" href="#"><i class="fas fa-building fa-fw mr-2"></i>Home</a>
+{% endblock home %}
+
+{% block content %}
+    <div class="main-wrapper">
+        <section class="main-section px-3 py-5 p-md-5">
+
+            <div class="container img-container d-none d-md-block">
+                <img src="{% static 'img\condominio.jpg' %}" width="100%" alt="Foto del condominio">
+            </div><!--//container-->
+
+            <div class="container">
+                <div class="title col-12 text-center my-5">
+                    <h1>Residenza La Rosa</h1>
+                </div><!--//col-->
+                
+                <div class="row">
+                    <div class="col-md-12 text-center mb-5">
+                        <p>Via pippo, 10 - 20121 Milano MI.</p>
+                    </div><!--//col-->
+                </div><!--//row-->
+            </div><!--//container-->
+
+        </section><!--//main-section-->
+    </div><!--//main-wrapper-->
+{% endblock content %}

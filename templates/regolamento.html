@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Regolamento{% endblock title %}
+
+{% block regolamento %}
+    <a class="nav-link selected" href="#"><i class="fas fa-gavel fa-fw mr-2"></i>Regolamento</a>
+{% endblock regolamento %}
+
+{% block content %}
+    <div class="main-wrapper">
+        <section class="main-section px-3 py-5 p-md-5">
+
+            <div class="container">
+                <div class="title col-12 text-center">
+                    <h1>Regolamento</h1>
+                </div><!--//col-->
+                
+                <div class="row">
+                    <div class="col-12 text-center mt-5 mb-4">
+                        <a class="btn btn-primary" href="{% static 'documents/Regolamento.pdf' %}" download target="_blank"><i class="fas fa-file-pdf mr-2"></i>Scarica PDF</a>
+                    </div><!--//col-->
+
+                    <div class="col-12">
+                        <iframe src="{% static 'documents/Regolamento.pdf' %}" height="500px" width="100%"></iframe>
+                    </div><!--//col-->
+                </div><!--//row-->
+            </div><!--//container-->
+
+        </section><!--//main-section-->
+    </div><!--//main-wrapper-->
+{% endblock content %}

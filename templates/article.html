@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}{{articolo.title}}{% endblock title %}
+
+{% block news %}
+    <a class="nav-link selected" href="/news"><i class="fas fa-newspaper fa-fw mr-2"></i>News</a>
+{% endblock news %}
+
+{% block content %}
+    <div class="main-wrapper">
+        <section class="main-section px-3 py-5 p-md-5">
+
+            <div class="container">
+                <div class="title col-12 text-center">
+                    <h1>{{articolo.title}}</h1>
+                </div><!--//col-->
+
+                <div class="row my-5">
+                    <div class="col-12 text-center mb-5">
+                        <h2>{{articolo.description}}</h2>
+                    </div><!--//col-->
+
+                    <div class="col-12 mb-3 content">
+                        {{articolo.content | safe}}
+                    </div><!--//col-->
+
+                </div><!--//row-->
+            </div><!--//container-->
+
+        </section><!--//main-section-->
+    </div><!--//main-wrapper-->
+{% endblock content %}

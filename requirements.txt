@@ -1,0 +1,24 @@
+# INSTALL PYTHON 3.8.3 (adding it to the path)
+# UPGRADE PIP: $ python -m pip install --upgrade pip
+
+
+# INSTALL LIBRARIES:
+# How to install: & pip install -r /path/to/requirements.txt
+
+Django==3.0.8
+django-ckeditor==5.9.0
+hurry.filesize==0.9
+requests==2.24.0
+mod-wsgi==4.7.1
+waitress==1.4.4
+
+# By installing the above, the following is automatically installed.
+
+asgiref==3.2.10
+certifi==2020.6.20
+chardet==3.0.4
+django-js-asset==1.2.2
+idna==2.10
+pytz==2020.1
+sqlparse==0.3.1
+urllib3==1.25.9

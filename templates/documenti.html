@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Documenti ufficiali{% endblock title %}
+
+{% block documenti-ufficiali %}
+    <a class="nav-link selected" href="#"><i class="fas fa-file-alt fa-fw mr-2"></i>Documenti ufficiali</a>
+{% endblock documenti-ufficiali %}
+
+{% block content %}
+    <div class="main-wrapper">
+        <section class="main-section px-3 py-5 p-md-5">
+
+            <div class="container">
+                <div class="title col-12 text-center">
+                    <h1>Documenti ufficiali</h1>
+                </div><!--//col-->
+
+                {% if user.is_authenticated and user.is_superuser %}
+                    <div class="col-12 text-right">
+                        <a class="btn btn-primary" href="/admin/web/document/add/"><i class="fa fa-plus"></i></a>
+                    </div><!--//col-->
+                {% endif %}
+
+                <div class="row text-center text-lg-left mt-5">
+                    {% for d in documenti %}
+                        <div class="col-12 col-lg-6 my-2">
+                            {% if d.file %}
+                                <p class="content"><a href="{{d.file}}" download target="_blank"><i class="fa fa-download fa-fw mr-2"></i>{{d.title}} - {{d.size}}</a></p>
+                            {% else %}
+                                <p class="content"><a href="#">{{d.title}} - {{d.size}}</a></p>
+                            {% endif %}
+                        </div><!--//col-->
+                    {% endfor %}
+                </div><!--//row-->
+            </div><!--//container-->
+
+        </section><!--//main-section-->
+    </div><!--//main-wrapper-->
+{% endblock content %}

@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}News{% endblock title %}
+
+{% block news %}
+    <a class="nav-link selected" href="#"><i class="fas fa-newspaper fa-fw mr-2"></i>News</a>
+{% endblock news %}
+
+{% block content %}
+    <div class="main-wrapper">
+        <section class="main-section px-3 py-5 p-md-5">
+            
+            <div class="container">
+                <div class="title col-12 text-center">
+                    <h1>News</h1>
+                </div><!--//col-->
+
+                {% if user.is_authenticated and user.is_superuser %}
+                    <div class="col-12 text-right">
+                        <a class="btn btn-primary" href="/admin/web/article/add/"><i class="fa fa-plus"></i></a>
+                    </div><!--//col-->
+                {% endif %}
+
+                <div class="row text-center text-lg-left">
+                    {% for article in articles %}
+                        <div class="article col-12 col-lg-6 my-5">
+                            <a href="{% url 'article' article.slug %}" class="article-link"><h2>{{article.title}}</h2></a>
+                            <p>{{article.description}}</p>
+                            <p class="article-data">{{article.created_date}}</p>
+                        </div><!--//article-->
+                    {% endfor %}
+                </div><!--//row-->
+            </div><!--//container-->
+
+        </section><!--//main-section-->
+    </div><!--//main-wrapper-->
+{% endblock content %}
