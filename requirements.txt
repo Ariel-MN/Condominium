@@ -5,7 +5,7 @@
 # INSTALL LIBRARIES:
 # How to install: & pip install -r /path/to/requirements.txt
 
-Django==3.0.8
+Django==3.0.14
 django-ckeditor==5.9.0
 hurry.filesize==0.9
 requests==2.24.0
