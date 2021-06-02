@@ -21,4 +21,4 @@ django-js-asset==1.2.2
 idna==2.10
 pytz==2020.1
 sqlparse==0.3.1
-urllib3==1.25.9
+urllib3==1.26.5
