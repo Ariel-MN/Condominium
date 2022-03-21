@@ -10,7 +10,7 @@ django-ckeditor==5.9.0
 hurry.filesize==0.9
 requests==2.24.0
 mod-wsgi==4.7.1
-waitress==1.4.4
+waitress==2.1.1
 
 # By installing the above, the following is automatically installed.
 
